@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Patients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Patient List</h1>
+        <br>
+       <a href="{{ url_for('index') }}" target="_blank" "><button style="background: hsl(151, 84%, 60%);">Home</button></a> 
+    </header>
+    <div class="container">
+        <h2>All Patients</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Diagnosis</th>
+                    <th>Doctor's Name</th>
+                    <th>Medicine</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{ patient['id'] }}</td>
+                    <td>{{ patient['name'] }}</td>
+                    <td>{{ patient['age'] }}</td>
+                    <td>{{ patient['diagnosis'] }}</td>
+                    <td>{{ patient['doctor_name'] }}</td>
+                    <td>{{ patient['medicine_name'] }}</td>
+                    <td>
+                        <div class="actions">
+                            <a href="{{ url_for('update_patient', patient_id=patient['id']) }}" class="btn">Edit</a>
+                            <form action="{{ url_for('delete_patient', patient_id=patient['id']) }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Patient</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Add a New Patient</h1>
+        <a href="{{ url_for('index') }}" target="_blank" "><button style="background: hsl(151, 84%, 60%);">Home</button></a> 
+    </header>
+    <div class="container">
+        <form action="{{ url_for('add_patient') }}" method="POST">
+            <label for="name">Patient's Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="diagnosis">Diagnosis</label>
+            <input type="text" id="diagnosis" name="diagnosis" required>
+
+            <label for="doctor_name">Doctor's Name</label>
+            <input type="text" id="doctor_name" name="doctor_name" required>
+
+            <label for="medicine_name">Prescribed Medicine</label>
+            <input type="text" id="medicine_name" name="medicine_name" required>
+
+            <button type="submit">Add Patient</button>
+        </form>
+    </div>
+</body>
+</html>

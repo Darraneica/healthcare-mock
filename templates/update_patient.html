@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Patient</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Update Patient</h1>
+    </header>
+    <div class="container">
+        <form method="POST">
+            <label for="name">Patient's Name</label>
+            <input type="text" id="name" name="name" value="{{ patient['name'] }}" required>
+
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" name="birthdate" value="{{ patient['birthdate'] }}" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" value="{{ patient['age'] }}" required>
+
+            <label for="diagnosis">Diagnosis</label>
+            <input type="text" id="diagnosis" name="diagnosis" value="{{ patient['diagnosis'] }}" required>
+
+            <label for="doctor_name">Doctor's Name</label>
+            <input type="text" id="doctor_name" name="

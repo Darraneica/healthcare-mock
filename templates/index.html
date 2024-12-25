@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Patient Management System</h1>
+    </header>
+    <div class="container">
+        <h2 style="text-align: center;">What would you like to do?</h2>
+        <ul style="text-align: center;">
+            <li><a href="{{ url_for('add_patient') }}" style="background: hsl(151, 84%, 60%)">Add a Patient</a></li>
+            <li><a href="{{ url_for('view_patients') }}" style="background: hsl(151, 84%, 60%)">View All Patients</a></li>
+        </ul>
+    </div>
+</body>
+</html>
