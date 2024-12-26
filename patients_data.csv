@@ -1,3 +1,2 @@
 id,name,birthdate,age,diagnosis,doctor_name,medicine_name
-1,Jane Doe,1998-12-14,26,Pregnant,Dr. Song,Vitamins
-2,Sonya David,1970-09-25,54,Type 2 Diabetes,Dr. Meadows,Wegovy
+1,Jane Doe,1970-01-01,54,Type 2 Diabetes,Dr. Song,Zepbound
